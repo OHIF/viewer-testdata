@@ -81,6 +81,8 @@ window.config = {
   - If you wanted multiple data sets, you could submodule this or choose a different mount point.
 - `dcm/` contains our seed DICOM files. By default, the `seed-db.py` file will upload all `.dcm` files in this directory.
 
+> :wave: If `couchdb-data` grows too large; we can simply re-upload `dcm` files when the volume is spun up.
+
 ### Resources
 
 - [Python DICOMWeb Client Docs][dicomweb-client-docs]
