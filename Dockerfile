@@ -28,6 +28,8 @@ RUN chmod 777 /usr/src/entrypoint.sh
 
 EXPOSE 5985
 ENTRYPOINT npm start
+
+## Currently unused
 # CMD [ "node", "server.js" ]
 # ["/usr/src/entrypoint.sh"]
 # CMD ["nginx", "-g", "daemon off;"]
