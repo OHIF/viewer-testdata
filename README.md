@@ -83,6 +83,12 @@ window.config = {
 
 > :wave: If `couchdb-data` grows too large; we can simply re-upload `dcm` files when the volume is spun up.
 
+### Tools helpful for creating test data
+
+- [MicroDicom](http://www.microdicom.com/downloads.html) (win only)
+- [img2dcm](https://support.dcmtk.org/docs/img2dcm.html) (command line)
+- [DicomBrowser](https://wiki.xnat.org/xnat-tools/dicombrowser) (win, mac, CLI)
+
 ### Resources
 
 - [Python DICOMWeb Client Docs][dicomweb-client-docs]
