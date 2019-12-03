@@ -13,16 +13,18 @@ This repository is used as a version controlled collection of DICOM studies that
 **For Running Container:**
 
 - Docker: [Windows][win-docker] | [Mac][mac-docker]
-- [Share your drive w/ docker][share-drive]
+- [Share your drive w/ docker][share-drive] (on mac your drive will be shared by default)
 
 **For Uploading New Studies:**
 
 - [Windows Subsystem for Linux][install-linux] (or Linux)
   - This is not strictly true, but I find it easier
-- Python & pip
-  - `apt-get -y install python2.7 python-pip`
-- Dicomweb-client
-  - `pip install dicomweb-client`
+- Install Python 3 & pip (Linux)
+  - `apt-get -y install python3 python3-pip`
+- Install Python 3 & pip (Mac)
+  - `brew install python3 python3-pip`
+- Install Dicomweb-client and pydicom (Linux/Mac)
+  - `pip3 install dicomweb-client pydicom`
 
 ## Usage
 
@@ -34,7 +36,7 @@ This repository is used as a version controlled collection of DICOM studies that
 **Add Studies:**
 
 - `cd dcm`
-- `python seed-db.py`
+- `python3 seed-db.py`
 
 **Request Data:** ([QIDO-RS][qido-rs])
 
@@ -53,25 +55,24 @@ By default `dicomweb-server` has a wide open CORS policy set in it's `fastify` c
 
 ```js
 window.config = {
-  routerBasename: '/',
+  routerBasename: "/",
   extensions: [],
   showStudyList: true,
   servers: {
     dicomWeb: [
       {
-        name: 'dicomweb_server',
-        wadoUriRoot: 'http://localhost:5985',
-        qidoRoot: 'http://localhost:5985',
-        wadoRoot: 'http://localhost:5985',
+        name: "dicomweb_server",
+        wadoUriRoot: "http://localhost:5985",
+        qidoRoot: "http://localhost:5985",
+        wadoRoot: "http://localhost:5985",
         qidoSupportsIncludeField: true,
-        imageRendering: 'wadouri',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-      },
-    ],
-  },
+        imageRendering: "wadouri",
+        thumbnailRendering: "wadors",
+        enableStudyLazyLoad: true
+      }
+    ]
+  }
 };
-
 ```
 
 ## Developing
@@ -87,7 +88,7 @@ window.config = {
 
 - [Python DICOMWeb Client Docs][dicomweb-client-docs]
 
-<!-- 
+<!--
     LINKS
 -->
 
