@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: dicomweb-server:latest
+    image: ohif/dicomweb-server:latest
     hostname: dicomweb-server
     ports:
       - '5985:5985' # DICOMWeb

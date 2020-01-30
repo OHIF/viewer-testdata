@@ -14,6 +14,7 @@ RUN git config --global user.email "danny.ri.brown@gmail.com"
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 RUN git clone git://github.com/dcmjs-org/dicomweb-server /usr/src/app
+RUN git pull
 WORKDIR /usr/src/app
 
 # Restore deps
@@ -27,9 +28,4 @@ COPY ./config/entrypoint.sh /usr/src/
 RUN chmod 777 /usr/src/entrypoint.sh
 
 EXPOSE 5985
-ENTRYPOINT npm start
-
-## Currently unused
-# CMD [ "node", "server.js" ]
-# ["/usr/src/entrypoint.sh"]
-# CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
