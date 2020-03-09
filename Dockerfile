@@ -1,19 +1,22 @@
 #
-# BUILD: docker build -t dicomweb-server:latest .
+# BUILD: docker build --tag ohif/viewer-testdata:latest .
+# RUN: docker run -p 5985:5985 -p 5984:5984 ohif/viewer-testdata:latest
 #
-FROM node:10.16.3-slim
+FROM couchdb:2.3.1
 
-# Install Git
+# Install prerequisites
 RUN apt-get update
-RUN apt-get -y install git-core
-RUN git --version
-RUN git config --global user.name "dannyrb"
-RUN git config --global user.email "danny.ri.brown@gmail.com"
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
+RUN apt-get -y install apt-utils \
+	git-core \
+	software-properties-common \
+	nodejs \
+	supervisor
 
 # Grab Source
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
-RUN git clone git://github.com/dcmjs-org/dicomweb-server /usr/src/app
+RUN git clone https://github.com/dcmjs-org/dicomweb-server.git /usr/src/app
 RUN git pull
 WORKDIR /usr/src/app
 
@@ -24,8 +27,13 @@ RUN npm ci
 COPY ./config/server-config.js config/development.js
 
 # Setup Entrypoint
-COPY ./config/entrypoint.sh /usr/src/
+COPY ./config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN chmod 777 /usr/src/entrypoint.sh
+RUN chmod 777 /usr/src/dicomweb-server-service.sh
+RUN chmod 777 /usr/src/couchdb-service.sh
 
+RUN npm install pouchdb-server
+
+EXPOSE 5984
 EXPOSE 5985
-CMD ["npm", "start"]
+CMD ["supervisord", "-n"]
