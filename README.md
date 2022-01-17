@@ -1,12 +1,24 @@
 # DICOMWeb Server w/ Test Data
 
-> ⚠️ THIS REPOSITORY IS NOT FOR PRODUCTION USAGE. It's a very simple way to provide tightly controlled test data to applications that integrate with DICOMWeb.
+> THIS REPOSITORY IS NOT FOR PRODUCTION USAGE. It's a very simple way to provide tightly controlled test data to applications that integrate with DICOMWeb.
 
-This repository is used as a version controlled collection of DICOM studies that are made available with lightweight implementation of [DICOMWeb][dicom-web]. We're leveraging the following projects:
+This repository is used as a version controlled collection of DICOM studies that are made available with lightweight implementation of [DICOMWeb][dicom-web] or the static wado service. We're leveraging the following projects:
 
 - [dicomweb-server][dicomweb-server]: Lightweight DICOMweb Server with CouchDB
 - [CouchDB][couchdb]: NoSQL document-oriented database solution
 - [dicomweb-client][dicomweb-client]: Python client for DICOMweb services.
+- [dicomp10-to-dicomweb][dicomp10-to-dicomweb]: JavaScript version of a static wado generator for dicomweb
+
+# Installing Test Files
+Run the two commands below to install mkdicomweb first, and then to run it on the test data, installing the test data to ~/viewer-testdata.  The viewer testdata is automatically served by running the yarn start command in OHIF.
+
+```
+npm install -g dicomp10-to-dicomweb
+mkdicomweb -d ~/viewer-testdata dcm
+```
+
+None of the remaining options are required.
+
 
 ## Requirements
 
