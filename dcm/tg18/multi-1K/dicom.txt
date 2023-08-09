@@ -1,0 +1,26 @@
+# header information from most recent DICOM save
+# ----------------------------------------------
+AAPM^Test^Patterns
+TG18-2002
+20022002
+1K-MULTI
+20020704
+NA
+NA
+Multi Purpose 1K
+TG18-QC
+AAPM
+Images from the 2002 AAPM task group report on display performance
+NA
+NA
+American Association of Physicists in Medicine
+Display  Quality Test Protocol
+O
+OT
+20021117
+190619
+01
+0
+0
+0
+0

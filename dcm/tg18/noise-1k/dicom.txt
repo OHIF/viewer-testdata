@@ -1,0 +1,26 @@
+# header information from most recent DICOM save
+# ----------------------------------------------
+AAPM^Test^Patterns
+TG18-2002
+20022002
+1K-NOISE
+20020704
+NA
+NA
+Noise 1K
+TG18-AFC
+AAPM
+Images from the 2002 AAPM task group report on display performance
+NA
+NA
+American Association of Physicists in Medicine
+Display  Quality Test Protocol
+O
+OT
+20021118
+000220
+01
+0
+0
+0
+0
