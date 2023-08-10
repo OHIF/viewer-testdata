@@ -1,0 +1,26 @@
+# header information from most recent DICOM save
+# ----------------------------------------------
+AAPM^Test^Patterns
+TG18-2002
+20022002
+2K-RESOL
+20020704
+NA
+NA
+Resolution 2K
+TG18-CX
+AAPM
+Images from the 2002 AAPM task group report on display performance
+NA
+NA
+American Association of Physicists in Medicine
+Display  Quality Test Protocol
+O
+OT
+20020801
+101834
+01
+0
+0
+0
+0
